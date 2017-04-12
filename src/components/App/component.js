@@ -1,7 +1,8 @@
 import React from 'react'
-import Example from '../Example'
 import logo from './assets/logo.svg'
 import './assets/style.css'
+import InputBook from '../InputBook'
+import ListBook from '../ListBook'
 
 const App = () => (
   <div className="App">
@@ -11,7 +12,9 @@ const App = () => (
     </div>
     <div className="App-intro">
       vCode Dev-Tools<br /><br />
-      <Example />
+      <h2 className="h2-main"> Add New Book</h2>
+      <InputBook />
+      <ListBook />
     </div>
   </div>
 )

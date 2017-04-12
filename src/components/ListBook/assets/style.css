@@ -1,0 +1,24 @@
+.th-list-isbn {
+	width: 100px;
+}
+.th-list-npq {
+	width: 225px;
+}
+.th-list-totle {
+	width: 150px;
+}
+
+.th-list-action {
+	width: 150px;
+}
+.div-list {
+	margin-top: 30px;
+}
+
+th {
+	border-style: inset;
+}
+
+td {
+	border-style: inset;
+}

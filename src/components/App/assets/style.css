@@ -23,10 +23,15 @@ body {
 .App-intro {
   font-size: large;
   margin: 30px auto;
-  width: 200px;
+  width: 80%;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.h2-main {
+  text-align: left;
+  margin-left: 20px;
 }
