@@ -6,17 +6,17 @@ const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
     <td className="td-item">
       { isbn }
     </td>
-    <td className="td-item">
+    <td className="td-item">s
       { name }
     </td>
     <td className="td-item">
-      { `฿${price}` }
+      { `฿${+price}` }
     </td>
     <td className="td-item">
-      { quantity }
+      { +quantity }
     </td>
     <td className="td-item">
-      { `฿ ${price * quantity}` }
+      { `฿ ${+price * +quantity}` }
     </td>
     <td className="td-item">
       <button>Edit</button><button onClick={() => bookDelete(id)}>Delete</button>

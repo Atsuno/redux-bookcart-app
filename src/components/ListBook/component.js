@@ -32,7 +32,7 @@ const ListBook = ({ books }) => (
       </tbody>
     </table>
     <p className="p-list">
-      Grand Total: ฿ { books.reduce((callback, book) => callback + (book.price * book.quantity), 0)}
+      Grand Total: ฿ { books.reduce((callback, book) => callback + (+book.price * +book.quantity), 0)}
     </p>
   </div>
   )
