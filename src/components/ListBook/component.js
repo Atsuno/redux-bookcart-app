@@ -40,10 +40,10 @@ ListBook.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      isbn: PropTypes.number.isRequired,
+      isbn: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      quantity: PropTypes.number.isRequired
+      price: PropTypes.string.isRequired,
+      quantity: PropTypes.string.isRequired
     })
   ).isRequired
 }

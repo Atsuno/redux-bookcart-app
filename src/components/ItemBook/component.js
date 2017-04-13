@@ -6,7 +6,7 @@ const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
     <td className="td-item">
       { isbn }
     </td>
-    <td className="td-item">s
+    <td className="td-item">
       { name }
     </td>
     <td className="td-item">
@@ -26,18 +26,18 @@ const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
 
 ItemBook.propTypes = {
   id: PropTypes.number,
-  isbn: PropTypes.number,
+  isbn: PropTypes.string,
   name: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
+  price: PropTypes.string,
+  quantity: PropTypes.string,
   bookDelete: PropTypes.func.isRequired
 }
 ItemBook.defaultProps = {
   id: 1,
-  isbn: 1,
+  isbn: '1',
   name: 'text 1',
-  price: 100,
-  quantity: 2
+  price: '100',
+  quantity: '2'
 }
 
 export default ItemBook
