@@ -1,14 +1,15 @@
 import React from 'react'
 import './assets/style.css'
+import ItemBook from '../ItemBook'
 
-const ListBook = () => (
+const ListBook = ({ books }) => (
   <div className="div-list">
     <table>
       <tbody>
         <tr>
           <th className="th-list-isbn">
-          ISBN
-        </th>
+            ISBN
+          </th>
           <th className="th-list-npq">
             Name
           </th>
@@ -25,9 +26,15 @@ const ListBook = () => (
             Action
           </th>
         </tr>
+        {
+          books.map(book => <ItemBook key={book.id} {...book} />)
+        }
       </tbody>
     </table>
+    <p className="p-list">
+      Grand Total: ฿ { books.reduce((callback, book) => callback + (book.price * book.quantity), 0)}
+    </p>
   </div>
-)
+  )
 
 export default ListBook

@@ -1,24 +1,31 @@
 .th-list-isbn {
 	width: 100px;
+	background-color: lightseagreen;
+	color: white;
 }
 .th-list-npq {
 	width: 225px;
+	background-color: lightseagreen;
+	color: white;
 }
 .th-list-totle {
 	width: 150px;
+	background-color: lightseagreen;
+	color: white;
 }
 
 .th-list-action {
 	width: 150px;
+	background-color: lightseagreen;
+	color: white;
 }
 .div-list {
 	margin-top: 30px;
 }
 
-th {
-	border-style: inset;
-}
-
-td {
-	border-style: inset;
+.p-list {
+	text-align: left;
+	text-decoration: underline;
+	font-weight: bold;
+	color: green;
 }
