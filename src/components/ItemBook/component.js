@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import './assets/style.css'
 
-const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
+const ItemBook = ({ id, isbn, name, price, quantity, bookDelete, bookEdit }) => (
   <tr>
     <td className="td-item">
       { isbn }
@@ -19,7 +19,8 @@ const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
       { `฿ ${+price * +quantity}` }
     </td>
     <td className="td-item">
-      <button>Edit</button><button onClick={() => bookDelete(id)}>Delete</button>
+      <button onClick={() => bookEdit(id)}>Edit</button>
+      <button onClick={() => bookDelete(id)}>Delete</button>
     </td>
   </tr>
 )

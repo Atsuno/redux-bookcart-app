@@ -9,3 +9,8 @@ export const bookDelete = id => ({
   type: TYPE.BOOK.DELETE,
   payload: { id }
 })
+
+export const bookEdit = id => ({
+  type: TYPE.BOOK.EDIT,
+  payload: { id }
+})
