@@ -1,7 +1,7 @@
 import React from 'react'
 import './assets/style.css'
 
-const ItemBook = ({ isbn, name, price, quantity }) => (
+const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
   <tr>
     <td className="td-item">
       { isbn }
@@ -19,7 +19,7 @@ const ItemBook = ({ isbn, name, price, quantity }) => (
       { `฿ ${price * quantity}` }
     </td>
     <td className="td-item">
-      <button>Edit</button><button>Delete</button>
+      <button>Edit</button><button onClick={() => bookDelete(id)}>Delete</button>
     </td>
   </tr>
 )
