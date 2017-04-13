@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import './assets/style.css'
 
 const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
@@ -23,5 +23,21 @@ const ItemBook = ({ id, isbn, name, price, quantity, bookDelete }) => (
     </td>
   </tr>
 )
+
+ItemBook.propTypes = {
+  id: PropTypes.number,
+  isbn: PropTypes.number,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+  bookDelete: PropTypes.func.isRequired
+}
+ItemBook.defaultProps = {
+  id: 1,
+  isbn: 1,
+  name: 'text 1',
+  price: 100,
+  quantity: 2
+}
 
 export default ItemBook

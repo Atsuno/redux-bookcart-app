@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import './assets/style.css'
 import ItemBook from '../ItemBook'
 
@@ -36,5 +36,17 @@ const ListBook = ({ books }) => (
     </p>
   </div>
   )
+ListBook.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      isbn: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      quantity: PropTypes.number.isRequired
+    })
+  ).isRequired
+}
+
 
 export default ListBook

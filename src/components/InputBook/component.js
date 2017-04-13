@@ -56,38 +56,38 @@ class InputBook extends Component {
         <div>
           <table>
             <tbody>
-            <tr>
-              <th className="th-input">
+              <tr>
+                <th className="th-input">
                 ISBN:
               </th>
-              <td className="td-input">
-                <input type="text" value={this.state.isbn} onChange={this.changeIsbn} placeholder="Number more zero" />
-              </td>
-            </tr>
-            <tr>
-              <th className="th-input">
+                <td className="td-input">
+                  <input type="text" value={this.state.isbn} onChange={this.changeIsbn} placeholder="Number more zero" />
+                </td>
+              </tr>
+              <tr>
+                <th className="th-input">
                 Name:
               </th>
-              <td className="td-input">
-                <input type="text" value={this.state.name} onChange={this.changeName} placeholder="Name book" />
-              </td>
-            </tr>
-            <tr>
-              <th className="th-input">
+                <td className="td-input">
+                  <input type="text" value={this.state.name} onChange={this.changeName} placeholder="Name book" />
+                </td>
+              </tr>
+              <tr>
+                <th className="th-input">
                 Price(In Rupee):
               </th>
-              <td className="td-input">
-                <input type="text" value={this.state.price} onChange={this.changePrice} placeholder="Number more zero" />
-              </td>
-            </tr>
-            <tr>
-              <th className="th-input">
+                <td className="td-input">
+                  <input type="text" value={this.state.price} onChange={this.changePrice} placeholder="Number more zero" />
+                </td>
+              </tr>
+              <tr>
+                <th className="th-input">
                 Quantity:
               </th>
-              <td className="th-input">
-                <input type="text" value={this.state.quantity} onChange={this.changeQuantity} placeholder="Number more zero" />
-              </td>
-            </tr>
+                <td className="th-input">
+                  <input type="text" value={this.state.quantity} onChange={this.changeQuantity} placeholder="Number more zero" />
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
