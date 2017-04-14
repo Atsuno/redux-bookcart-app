@@ -6,7 +6,8 @@ const createNewBooks = (books, isbn, name, price, quantity) => ({
   isbn,
   name,
   price,
-  quantity
+  quantity,
+  editDate: false
 })
 
 export default (books = initialStore.books, action) => {
