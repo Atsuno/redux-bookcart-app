@@ -10,9 +10,11 @@ class InputBook extends Component {
   }
 
   changeIsbn = event => {
-    this.setState({
-      isbn: event.target.value
-    })
+    if (Number(event.target.value) > 0) {
+      this.setState({
+        isbn: event.target.value
+      })
+    }
   }
 
   changeName = event => {
@@ -22,15 +24,19 @@ class InputBook extends Component {
   }
 
   changePrice = event => {
-    this.setState({
-      price: event.target.value
-    })
+    if (Number(event.target.value) > -1) {
+      this.setState({
+        price: event.target.value
+      })
+    }
   }
 
   changeQuantity = event => {
-    this.setState({
-      quantity: event.target.value
-    })
+    if (Number(event.target.value) > -1) {
+      this.setState({
+        quantity: event.target.value
+      })
+    }
   }
 
   eventClick = () => {
@@ -38,7 +44,7 @@ class InputBook extends Component {
     const name = this.state.name
     const price = this.state.price
     const quantity = this.state.quantity
-    if (isbn.length && name.length && price.length && quantity.length && Number(isbn) > 0 && Number(price) > 0 && Number(quantity) > 0) {
+    if (isbn.length && name.length && price.length && quantity.length) {
       this.props.bookAdd(isbn, name, price, quantity)
       this.setState({
         isbn: '',
