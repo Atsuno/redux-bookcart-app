@@ -10,7 +10,7 @@ class InputBook extends Component {
   }
 
   changeIsbn = event => {
-    if (Number(event.target.value) > 0) {
+    if (event.target.value.length < 8 && Number(event.target.value) > 0) {
       this.setState({
         isbn: event.target.value
       })
