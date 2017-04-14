@@ -18,7 +18,7 @@ export default (books = initialStore.books, action) => {
       return books.filter(record => record.id !== action.payload.id)
     }
     case TYPE.BOOK.EDIT: {
-      return books.map(book => book.id !== action.payload.id ? book : { ...book, editData: book.editData })
+      return books.map(book => book.id !== action.payload.id ? book : { ...book, editData: !book.editData })
     }
     default: {
       return books
