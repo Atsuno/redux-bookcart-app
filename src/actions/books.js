@@ -14,3 +14,8 @@ export const bookEdit = id => ({
   type: TYPE.BOOK.EDIT,
   payload: { id }
 })
+
+export const bookSave = (id, name, price, quantity) => ({
+  type: TYPE.BOOK.SAVE,
+  payload: { id, name, price, quantity }
+})

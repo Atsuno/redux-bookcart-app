@@ -7,7 +7,7 @@ const createNewBooks = (books, isbn, name, price, quantity) => ({
   name,
   price,
   quantity,
-  editDate: false
+  editData: false
 })
 
 export default (books = initialStore.books, action) => {
@@ -19,6 +19,19 @@ export default (books = initialStore.books, action) => {
       return books.filter(record => record.id !== action.payload.id)
     }
     case TYPE.BOOK.EDIT: {
+      return books.map(book => book.id !== action.payload.id ? book : { ...book, editData: !book.editData })
+    }
+    case TYPE.BOOK.SAVE: {
+      return books.map(book => book.id !== action.payload.id ?
+        book :
+      { ...book,
+        name: action.payload.name,
+        price: action.payload.price,
+        quantity: action.payload.quantity,
+        editData: false
+      })
+    }
+    case TYPE.BOOK.TOGGLE: {
       return books.map(book => book.id !== action.payload.id ? book : { ...book, editData: !book.editData })
     }
     default: {

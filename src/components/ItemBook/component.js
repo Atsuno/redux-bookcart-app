@@ -4,34 +4,11 @@ import './assets/style.css'
 class ItemBook extends Component {
 
   state = {
+    id: this.props.id,
     name: this.props.name,
     price: this.props.price,
     quantity: this.props.quantity,
-    editDate: false
-  }
-
-  didMount = () => {
-    this.setState({
-      changeName: this.state.name
-    })
-  }
-
-  eventEdit = () => {
-    this.setState({
-      editDate: true,
-      changeName: this.props.name
-    })
-  }
-
-  eventSave = () => {
-    const name = this.state.name
-    const price = this.state.price
-    const quantity = this.state.quantity
-    if (name.length && price.length && quantity.length) {
-      this.setState({
-        editDate: false
-      })
-    }
+    editData: false
   }
 
   changeName = event => {
@@ -56,36 +33,60 @@ class ItemBook extends Component {
     }
   }
 
+  eventSave = () => {
+    const id = this.state.id
+    const name = this.state.name
+    const price = this.state.price
+    const quantity = this.state.quantity
+    const editData = this.state.editData
+    this.props.bookSave(id, name, price, quantity, editData)
+  }
+
   render() {
+    if (this.props.editData) {
+      return (
+        <tr>
+          <td className="td-item">
+            { this.props.isbn }
+          </td>
+          <td className="td-item">
+            <input type="text" value={this.state.name} onChange={this.changeName} />
+          </td>
+          <td className="td-item">
+            <input type="text" value={+this.state.price} onChange={this.changePrice} />
+          </td>
+          <td className="td-item">
+            <input type="text" value={+this.state.quantity} onChange={this.changeQuantity} />
+          </td>
+          <td className="td-item">
+            { `฿ ${+this.state.price * +this.state.quantity}` }
+          </td>
+          <td className="td-item">
+            <button onClick={this.eventSave}>Save</button>
+            <button onClick={() => this.props.bookDelete(this.props.id)}>Delete</button>
+          </td>
+        </tr>
+      )
+    }
     return (
       <tr>
         <td className="td-item">
           { this.props.isbn }
         </td>
         <td className="td-item">
-          <span className={!this.props.editData ? 'viewStyle' : 'editStyle'}>{ this.state.name }</span> <input
-            className={this.props.editData ? 'viewStyle' : 'editStyle'}
-            type="text" value={this.state.name} onChange={this.changeName}
-          />
+          <span>{ this.state.name }</span>
         </td>
         <td className="td-item">
-          <span className={!this.props.editData ? 'viewStyle' : 'editStyle'}>{ `฿${+this.state.price}` }</span> <input
-            className={this.props.editData ? 'viewStyle' : 'editStyle'}
-            type="text" value={+this.state.price} onChange={this.changePrice} readOnly={false}
-          />
+          <span >{ `฿${+this.state.price}` }</span>
         </td>
         <td className="td-item">
-          <span className={!this.props.editData ? 'viewStyle' : 'editStyle'}>{ +this.state.quantity }</span> <input
-            className={this.props.editData ? 'viewStyle' : 'editStyle'}
-            type="text" value={+this.state.quantity} onChange={this.changeQuantity} readOnly={false}
-          />
+          <span >{ +this.state.quantity }</span>
         </td>
         <td className="td-item">
           { `฿ ${+this.state.price * +this.state.quantity}` }
         </td>
         <td className="td-item">
-          <button className={!this.props.editData ? 'viewStyle' : 'editStyle'} onClick={() => this.props.bookEdit(this.props.id)}>Edit</button>
-          <button className={this.props.editData ? 'viewStyle' : 'editStyle'} onClick={() => this.props.bookEdit(this.props.id)}>Save</button>
+          <button onClick={() => this.props.bookEdit(this.props.id)}>Edit</button>
           <button onClick={() => this.props.bookDelete(this.props.id)}>Delete</button>
         </td>
       </tr>
@@ -101,7 +102,8 @@ ItemBook.propTypes = {
   quantity: PropTypes.string,
   editData: PropTypes.bool,
   bookDelete: PropTypes.func.isRequired,
-  bookEdit: PropTypes.func.isRequired
+  bookEdit: PropTypes.func.isRequired,
+  bookSave: PropTypes.func.isRequired
 }
 ItemBook.defaultProps = {
   id: 1,

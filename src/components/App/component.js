@@ -3,6 +3,7 @@ import logo from './assets/logo.svg'
 import './assets/style.css'
 import InputBook from '../InputBook'
 import ListBook from '../ListBook'
+import SearchBook from '../SearchBook'
 
 const App = () => (
   <div className="App">
@@ -14,6 +15,7 @@ const App = () => (
       vCode Dev-Tools<br /><br />
       <h2 className="h2-main"> Add New Book</h2>
       <InputBook />
+      <SearchBook />
       <ListBook />
     </div>
   </div>
