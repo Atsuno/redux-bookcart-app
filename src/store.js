@@ -2,7 +2,7 @@ export const initialStore = {
   books: [
     {
       id: 1,
-      isbn: '123',
+      isbn: '12345678',
       name: 'text 1',
       price: '100',
       quantity: '2',
@@ -10,7 +10,7 @@ export const initialStore = {
     },
     {
       id: 2,
-      isbn: '456',
+      isbn: '45678912',
       name: 'text 2',
       price: '150',
       quantity: '3',
