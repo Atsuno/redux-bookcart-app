@@ -57,7 +57,7 @@ ListBook.defaultProps = {
   books: PropTypes.arrayOf(
     PropTypes.shape({
       id: 1,
-      isbn: '123',
+      isbn: '12345678',
       name: 'text 1',
       price: '100',
       quantity: '2',

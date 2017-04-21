@@ -13,7 +13,7 @@ const App = () => (
     </div>
     <div className="App-intro">
       vCode Dev-Tools<br /><br />
-      <h2 className="h2-main"> Add New Book</h2>
+      <h2 className="h2-main">Add New Book</h2>
       <InputBook />
       <SearchBook />
       <ListBook />

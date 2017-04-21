@@ -1,9 +1,12 @@
 import { mapDispatchToProps } from '../container'
 import { bookAdd } from '../../../actions/books'
 
+jest.mock('../component', () => jest.fn())
+jest.mock('../../../actions/books', () => 'actions')
+
 describe('Input Container', () => {
   it('mapDispatchToProps', () => {
     expect(Object.keys(mapDispatchToProps)).toHaveLength(1)
-    expact(mapDispatchToProps.bookAdd).toBe(bookAdd)
+    expect(mapDispatchToProps.bookAdd).toBe(bookAdd)
   })
 })

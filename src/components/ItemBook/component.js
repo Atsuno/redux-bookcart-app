@@ -53,10 +53,10 @@ class ItemBook extends Component {
             <input type="text" value={this.state.name} onChange={this.changeName} />
           </td>
           <td className="td-item">
-            <input type="text" value={+this.state.price} onChange={this.changePrice} />
+            <input type="text" value={this.state.price} onChange={this.changePrice} />
           </td>
           <td className="td-item">
-            <input type="text" value={+this.state.quantity} onChange={this.changeQuantity} />
+            <input type="text" value={this.state.quantity} onChange={this.changeQuantity} />
           </td>
           <td className="td-item">
             { `฿ ${+this.state.price * +this.state.quantity}` }
@@ -74,13 +74,13 @@ class ItemBook extends Component {
           { this.props.isbn }
         </td>
         <td className="td-item">
-          <span>{ this.state.name }</span>
+          { this.state.name }
         </td>
         <td className="td-item">
-          <span >{ `฿${+this.state.price}` }</span>
+          { `฿${this.state.price}` }
         </td>
         <td className="td-item">
-          <span >{ +this.state.quantity }</span>
+          { this.state.quantity }
         </td>
         <td className="td-item">
           { `฿ ${+this.state.price * +this.state.quantity}` }

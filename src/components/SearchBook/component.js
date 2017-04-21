@@ -3,7 +3,7 @@ import './assets/style.css'
 
 const SearchBook = ({ bookSearch }) => (
   <p className="p-search">
-    Search Book Name : <input type="text" onChange={event => bookSearch(event.target.value)} />
+    Search Book Name :<input id="bookSearch" type="text" onChange={event => bookSearch(event.target.value)} />
   </p>
 )
 SearchBook.propTypes = {

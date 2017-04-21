@@ -67,7 +67,7 @@ class InputBook extends Component {
                 ISBN:
               </th>
                 <td className="td-input">
-                  <input type="text" value={this.state.isbn} onChange={this.changeIsbn} placeholder="Character 8 only" />
+                  <input id="isbn" type="text" value={this.state.isbn} onChange={this.changeIsbn} placeholder="Character 8 only" />
                 </td>
               </tr>
               <tr>
@@ -75,7 +75,7 @@ class InputBook extends Component {
                 Name:
               </th>
                 <td className="td-input">
-                  <input type="text" value={this.state.name} onChange={this.changeName} />
+                  <input id="name" type="text" value={this.state.name} onChange={this.changeName} />
                 </td>
               </tr>
               <tr>
@@ -83,7 +83,7 @@ class InputBook extends Component {
                 Price(In Rupee):
               </th>
                 <td className="td-input">
-                  <input type="text" value={this.state.price} onChange={this.changePrice} />
+                  <input id="price" type="text" value={this.state.price} onChange={this.changePrice} />
                 </td>
               </tr>
               <tr>
@@ -91,7 +91,7 @@ class InputBook extends Component {
                 Quantity:
               </th>
                 <td className="th-input">
-                  <input type="text" value={this.state.quantity} onChange={this.changeQuantity} />
+                  <input id="quantity" type="text" value={this.state.quantity} onChange={this.changeQuantity} />
                 </td>
               </tr>
             </tbody>

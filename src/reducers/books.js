@@ -31,9 +31,6 @@ export default (books = initialStore.books, action) => {
         editData: false
       })
     }
-    case TYPE.BOOK.TOGGLE: {
-      return books.map(book => book.id !== action.payload.id ? book : { ...book, editData: !book.editData })
-    }
     default: {
       return books
     }
